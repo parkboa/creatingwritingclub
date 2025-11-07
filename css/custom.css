@@ -1,0 +1,387 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+STUDENT CUSTOMIZATION FILE
+This is where you make your design changes!
+Experiment with colors, typography, spacing, and component styles.
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* ==========================================================================
+   DESIGN SYSTEM - CUSTOMIZE YOUR COLORS & BRAND
+   ========================================================================== */
+
+:root {
+  --primary-100: #3A4E6A;
+  --primary-80: #486284;
+  --primary-50: #9CB0C9;
+  --primary-25: #CED7E4;
+  --grey: #EBEFF4;
+  --white: #fff;
+  
+  /* You can add more custom colors here */
+
+}
+
+
+
+
+/* ==========================================================================
+   TYPOGRAPHY - CUSTOMIZE FONTS & TEXT STYLES
+   ========================================================================== */
+
+body {
+  color: var(--primary-80);
+  /* font-family is set in framework.css but you can override it here if needed */
+}
+
+/* Heading Styles - Customize sizes, colors, spacing */
+h1, h2, h3, h4, h5, h6 { 
+  line-height: 1.1;
+  color: var(--primary-80);
+  /* Add your custom heading styles here */
+}
+
+h1 { 
+  font-size: 90px;
+  /* Try adding: font-weight, color, text-transform, etc. */
+}
+
+h2 { 
+  font-size: 42px;
+}
+
+
+
+h3 { 
+  font-size: 30px;
+}
+
+h4 { 
+  font-size: 24px;
+}
+
+h5 { 
+  font-size: 20px;
+}
+
+h6 { 
+  font-size: 18px;
+}
+
+/* Paragraph Styles */
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--primary-80);
+  /* Try adjusting: line-height, letter-spacing, margin-bottom */
+}
+
+img + h4,
+picture + p {
+  margin-top: var(--spacing8x2);
+}
+
+
+
+section div+div {
+  margin-top: var(--spacing8x1);
+}
+
+
+/* Mobile Typography Adjustments */
+@media only screen and (max-width: 799px) {
+  h1 { 
+    font-size: 75px;
+  }
+  
+  /* Add more mobile typography adjustments here */
+}
+
+/* ==========================================================================
+   LINKS & BUTTONS - CUSTOMIZE INTERACTIVE ELEMENTS
+   ========================================================================== */
+
+/* Basic Link Styles */
+a {
+  text-decoration: none;
+  color: var(--primary-80);
+  transition: all 300ms;
+  /* Try adding: border-bottom, font-weight changes, etc. */
+}
+
+a:hover {
+  opacity: 0.5;
+  /* Try different hover effects: color changes, transforms, etc. */
+}
+
+/* Button Styles - Customize your call-to-action buttons */
+a.button {
+  border-radius: 50px;
+  border: 2px solid var(--primary-80);
+  padding: 10px 20px 8px;
+  display: inline-block;
+  margin-top: var(--spacing8x2);
+  /* Try adding: background-color, box-shadow, transform on hover, etc. */
+}
+
+a.button:hover {
+  background: var(--dark)
+}
+
+/* Example: Secondary Button Style */
+a.button-secondary {
+  background-color: var(--accent-color);
+  border: 1.5px solid var(--accent-color);
+  color: var(--primary-80);
+}
+
+/* Example: Highlight Button Style */
+a.button-highlight {
+  background-color: var(--highlight-color);
+  border: 1.5px solid var(--highlight-color);
+  color: white;
+}
+
+/* ==========================================================================
+   LAYOUT SECTIONS - CUSTOMIZE PAGE STRUCTURE
+   ========================================================================== */
+
+
+/* Header styles */
+header img {
+  width: 160px;
+  /* Try adjusting: width, border-radius for logo styling */
+}
+
+header nav {
+  text-align: right;
+  font-size: 15px;
+}
+
+header nav a {
+  margin-left: 40px;
+  /* Try adding: text-transform, font-weight, padding for button-style nav */
+}
+
+header nav a.active {
+  border-bottom: 2px solid var(--primary-80);
+  padding-bottom: 2px;
+}
+
+
+/* Hero section */
+#hero-image {
+  background: url('../img/placeholder_bg.png') no-repeat center center/cover;
+  height: 95vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing8x3);
+}
+
+#hero-image h1 {
+  text-align: center;
+  color: var(--white);
+  margin: 0; 
+
+}
+
+#hero-image p {
+  color: var(--white);
+  margin: 0; 
+}
+
+#hero-image span i {
+  background: var(--white);
+  font-size: 1.625rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing8x12);
+}
+
+
+/* Light background wrapper - extends to viewport edges */
+.light-bg-wrapper {
+  background: var(--grey);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: var(--spacing8x3) calc(50vw - 50%);
+  box-sizing: border-box;
+}
+
+/* Callout */
+
+.callout {
+  background: var(--grey);
+}
+
+.callout div {
+  padding: var(--spacing8x8);
+}
+
+.callout-image {
+  background: url('../img/placeholder_bg.png') no-repeat center center/cover;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+
+
+
+
+
+
+/*  Content section */
+
+section p + a.button {
+  margin-top: var(--spacing8x12);
+}
+
+
+/* Footer Styles */
+footer {
+  width: 100%;
+  background: var(--primary-100);
+  color: var(--white);
+  padding: 40px 20px 20px;
+  /* Try customizing: background gradients, text alignment, etc. */
+}
+
+footer img {
+  width: 160px;
+}
+
+footer hr {
+  margin: 10px 0 20px;
+  border: none;
+  border-bottom: 1.5px solid var(--primary-25);
+}
+
+footer a, footer p {
+  color: var(--secondary-color);
+  font-size: 12px;
+}
+
+footer nav a { 
+  font-size: 14px;
+}
+
+footer nav a + a {
+  margin-left: 40px;
+}
+
+footer nav, footer p {
+  text-align: right;
+}
+
+/* Mobile Footer Adjustments */
+@media only screen and (max-width: 799px) {
+  footer nav {
+    text-align: center;
+  }
+
+  footer img {
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   COMPONENTS - CUSTOMIZE REUSABLE ELEMENTS
+   ========================================================================== */
+
+.dark-bg-wrapper h2,
+.dark-bg-wrapper h3,
+.dark-bg-wrapper h4,
+.dark-bg-wrapper p {
+  color: var(--white);
+}
+
+.dark-bg-wrapper a.button {
+  border: 2px solid var(--white);
+  color: var(--white);
+} 
+
+
+   /* Divider Lines */
+hr {
+  border: none;
+  border-bottom: 1.5px solid var(--primary-25);
+  /* Try adding: margin, different border styles, gradients */
+}
+
+/* Icon with Text Component */
+.icon-with-text i {
+  background: var(--grey);
+  padding: 17px 16px 23px;
+  border-radius: 200px;
+  font-size: 30px;
+  color: var(--primary-80);
+  /* Try customizing: colors, sizing, border-radius, box-shadow */
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   RESPONSIVE CUSTOMIZATIONS
+   ========================================================================== */
+
+/* Mobile-specific customizations */
+@media only screen and (max-width: 799px) {
+  /* Add mobile-specific styling here */
+  
+  /* Example: Larger touch targets for mobile */
+  a.button {
+    padding: 18px 24px 14px;
+    font-size: 16px;
+  }
+
+  
+  .callout-image {
+    height: 33vh;
+  }
+
+ 
+}
+
+/* Tablet-specific customizations */
+@media only screen and (min-width: 800px) and (max-width: 1279px) {
+  /* Add tablet-specific styling here */
+}
+
+/* Desktop-specific customizations */
+@media only screen and (min-width: 1280px) {
+  /* Add desktop-specific styling here */
+}
+
+/* Quote Section */
+.quote-section blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+.quote-section blockquote p {
+  font-size: 24px;
+  font-style: italic;
+  color: var(--white);
+  margin-bottom: var(--spacing8x2);
+  line-height: 1.4;
+}
+
+.quote-section cite {
+  font-size: 16px;
+  color: var(--primary-25);
+  font-style: normal;
+  font-weight: 500;
+}

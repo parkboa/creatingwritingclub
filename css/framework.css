@@ -1,0 +1,634 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+RESPONSIVE CSS FRAMEWORK FOR IxD STUDENTS
+Framework File - DO NOT EDIT
+Link to this file but make all customizations in your custom.css file
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* ==========================================================================
+  CSS RESET
+  Based on Eric Meyer's Reset CSS  
+  source: http://meyerweb.com/eric/tools/css/reset/ 
+  v2.0 | 20110126
+  License: none (public domain)
+========================================================================== */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   FONT LOADING
+   ========================================================================== */
+
+@font-face {
+  font-family: 'PPPangramSans';
+  src: url('https://raw.githubusercontent.com/merethom/framework/main/fonts/PPPangramSans-Bold.woff2') format('woff2'),
+       url('https://raw.githubusercontent.com/merethom/framework/main/fonts/PPPangramSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPPangramSans';
+  src: url('https://raw.githubusercontent.com/merethom/framework/main/fonts/PPPangramSans-Medium.woff2') format('woff2'),
+       url('https://raw.githubusercontent.com/merethom/framework/main/fonts/PPPangramSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPPangramSans';
+  src: url('https://raw.githubusercontent.com/merethom/framework/main/fonts/PPPangramSans-Semibold.woff2') format('woff2'),
+       url('https://raw.githubusercontent.com/merethom/framework/main/fonts/PPPangramSans-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+/* ==========================================================================
+   CSS Variables
+   ========================================================================== */
+
+ 
+ :root {
+
+  /* Color variables */
+  --primary-100: #3A4E6A;
+  --primary-80: #486284;
+  --primary-50: #9CB0C9;
+  --primary-25: #CED7E4;
+  --grey: #EBEFF4;
+  --white: #fff;
+
+
+  /* Spacing variables */
+  --spacing4x1: 0.25rem;
+  --spacing8x1: 0.5rem;
+  --spacing8x2: 1rem;
+  --spacing8x3: 1.5rem;
+  --spacing8x5: 2.5rem;
+  --spacing8x8: 4rem;
+  --spacing8x12: 6rem;
+  --spacing8x18: 9rem;
+  --spacing8x40: 20rem;
+
+  --max-mobile-width: 400px;
+  --max-tablet-width: 800px;
+  --max-desktop-width: 1440px;
+
+  --round-image-corner: 0.5rem;
+}
+
+
+
+/* ==========================================================================
+   CSS RESET & BASE STYLES
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "PPPangramSans", sans-serif;
+  font-weight: 500;
+  overflow-x: hidden;
+  line-height: 1.5;
+  color: var(--primary-80);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+
+/* ==========================================================================
+   RESPONSIVE GRID SYSTEM
+   ========================================================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: var(--spacing8x3);
+}
+
+.no-gap {
+  grid-gap: 0;
+}
+
+/* Mobile breakpoint - below 800px */
+@media only screen and (max-width: 799px) {
+  .mobi0 { display: none; }
+  .mobi1 { grid-column-end: span 12; }
+  .mobi2 { grid-column-end: span 6; }
+  .mobi3 { grid-column-end: span 4; }
+  .mobi4 { grid-column-end: span 3; }
+  .mobi6 { grid-column-end: span 2; }
+  .mobi12 { grid-column-end: span 1; }
+}
+
+/* Tablet breakpoint - 800px to 1279px */
+@media only screen and (min-width: 800px) and (max-width: 1279px) {
+  .tab0 { display: none; }
+  .tab1 { grid-column-end: span 12; }
+  .tab2 { grid-column-end: span 6; }
+  .tab3 { grid-column-end: span 4; }
+  .tab4 { grid-column-end: span 3; }
+  .tab6 { grid-column-end: span 2; }
+  .tab8 { grid-column-end: span 8; }
+  .tab12 { grid-column-end: span 1; }
+}
+
+/* Desktop breakpoint - 1280px and above */
+@media only screen and (min-width: 1280px) {
+  .desk0 { display: none; }
+  .desk1 { grid-column-end: span 12; }
+  .desk2 { grid-column-end: span 6; }
+  .desk3 { grid-column-end: span 4; }
+  .desk4 { grid-column-end: span 3; }
+  .desk6 { grid-column-end: span 2; }
+  .desk8 { grid-column-end: span 8; }
+  .desk12 { grid-column-end: span 1; }
+}
+
+
+/* ==========================================================================
+   LAYOUT UTILITIES
+   ========================================================================== */
+
+/* Text alignment */
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.centre-text { text-align: center; } /* Keep existing class for compatibility */
+
+
+
+/* ==========================================================================
+   COMPONENT UTILITIES
+   ========================================================================== */
+
+/* Icon with text layout */
+.icon-with-text {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 20px;
+}
+
+/* Image utilities */
+.img-responsive {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-cover {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.img-contain {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Full Viewport Image */
+.full-viewport-image {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.viewport-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark background wrapper - extends to viewport edges */
+.dark-bg-wrapper {
+  background: var(--primary-100);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: var(--spacing8x3) calc(50vw - 50%);
+  box-sizing: border-box;
+}
+
+
+/* Content that spans the full width and is divided in half */
+.dual-full-width {
+  background: var(--grey);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* This must be applied to a <div> parent, not a <section> parent (otherwise it breaks) */
+}
+
+.dual-full-width div {
+  min-height: 400px;
+}
+
+.dual-full-width .image {
+  background: url('../img/placeholder_bg.png') center center no-repeat;
+}
+
+.dual-full-width .text {
+  padding: var(--spacing8x8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Card section */
+
+section .card {
+  background: var(--grey);
+  border-radius: var(--spacing8x2);
+  padding: var(--spacing8x5);
+}
+
+section .card h4 + p {
+  margin-top: var(--spacing8x1);
+}
+
+section .card p + .button {
+  margin-top: var(--spacing8x3);
+}
+
+
+/* ==========================================================================
+   RESPONSIVE CUSTOMIZATIONS 
+   ========================================================================== */
+
+@media only screen and (max-width: 799px) {
+  
+  /* Horizontally centre text on moible only */
+  .mobi-h-cent { 
+    text-align: center; 
+  }
+
+
+  /* Reflow to single columnn on mobile only */
+  .dual-full-width {
+    grid-template-columns: 1fr;
+  }
+
+
+
+}
+
+
+
+
+/* ==========================================================================
+   MOBILE NAVIGATION SYSTEM
+   ========================================================================== */
+
+
+header {
+  margin: var(--spacing8x2) var(--spacing8x3);
+  align-items: center;
+}
+
+.featured {
+  margin-top: var(--spacing8x12);
+}
+
+section {
+  margin: var(--spacing8x8) var(--spacing8x3);
+}
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE NAVIGATION SYSTEM
+   ========================================================================== */
+
+/* Hide the checkbox but keep it functional */
+#mobile-nav-toggle {
+  position: fixed;
+  top: var(--spacing8x3);
+  right: var(--spacing8x3);
+  opacity: 0;
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  pointer-events: none;
+  z-index: 1002;
+}
+
+/* Hamburger menu styling */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  top: var(--spacing8x3)  ;
+  right: var(--spacing8x3);
+  z-index: 1001;
+  width: 32px;
+  height: var(--spacing8x3);
+}
+
+.hamburger-menu span {
+  display: block;
+  position: absolute;
+  height: var(--spacing4x1);
+  width: 100%;
+  background-color: var(--primary-100);
+  border-radius: var(spacing4x1);
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu span:nth-child(1) { top: 0; }
+.hamburger-menu span:nth-child(2) { top: 10px; }
+.hamburger-menu span:nth-child(3) { top: 20px; }
+
+/* Mobile navigation overlay */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-100);
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  display: grid;
+  grid-template-columns: 1fr;
+   padding-top: var(--spacing8x12);
+}
+
+.mobile-nav nav {
+  margin: 0 20px;
+}
+
+.mobile-nav nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  border-bottom: 1.5px solid #ebeff4;
+  padding: 20px 0;
+}
+
+/* Show mobile nav when checkbox is checked */
+#mobile-nav-toggle:checked ~ .mobile-nav {
+  transform: translateX(0);
+}
+
+/* Transform hamburger to X when menu is open */
+#mobile-nav-toggle:checked ~ .hamburger-menu span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+  background-color: white;
+}
+
+#mobile-nav-toggle:checked ~ .hamburger-menu span:nth-child(2) {
+  opacity: 0;
+}
+
+#mobile-nav-toggle:checked ~ .hamburger-menu span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+  background-color: white;
+}
+
+/* Prevent background scrolling when menu is open */
+#mobile-nav-toggle:checked ~ #content-wrapper {
+  height: auto;
+  overflow: visible;
+}
+
+body:has(#mobile-nav-toggle:checked) {
+  overflow: hidden;
+}
+
+/* Show hamburger menu on mobile only */
+@media only screen and (max-width: 799px) {
+  .hamburger-menu {
+    display: block;
+  }
+  
+  #mobi {
+    display: none;
+  }
+}
+
+
+
+/* ==========================================================================
+   DESKTOP DROPDOWN NAVIGATION
+   ========================================================================== */
+
+/* Dropdown container - positioned relative to allow absolute positioning of submenu */
+.desktop-nav nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Chevron icon styling */
+.desktop-nav nav .dropdown .fa-chevron-down {
+  font-size: 10px;
+  margin-left: 5px;
+  transition: transform 300ms;
+}
+
+/* Rotate chevron on hover */
+.desktop-nav nav .dropdown:hover .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Dropdown submenu - hidden by default */
+.desktop-nav nav .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--white);
+  border: 1.5px solid var(--grey);
+  border-radius: 4px;
+  width: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 300ms;
+  z-index: 1000;
+  margin-top: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(-3px);
+}
+
+/* Show dropdown menu on hover */
+.desktop-nav nav .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown menu items */
+.desktop-nav nav .dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: var(--primary-80);
+  text-decoration: none;
+  font-size: 15px;
+  margin-left: 0;
+  border-bottom: 1px solid var(--grey);
+  transition: all 300ms;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Remove border from last item */
+.desktop-nav nav .dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+/* Dropdown item hover state */
+.desktop-nav nav .dropdown-menu a:hover {
+  background-color: var(--grey);
+  opacity: 1;
+}
+
+
+/* ==========================================================================
+   MOBILE DROPDOWN NAVIGATION
+   ========================================================================== */
+
+/* Mobile dropdown container */
+.mobile-nav nav .dropdown {
+  display: block;
+}
+
+/* Hide the checkbox but keep it functional */
+.mobile-nav nav .mobile-dropdown-toggle {
+  display: none;
+}
+
+/* Mobile dropdown toggle label (acts as button) */
+.mobile-nav nav .dropdown label {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  border-bottom: 1.5px solid #ebeff4;
+  padding: 20px 0;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Mobile chevron icon */
+.mobile-nav nav .dropdown .fa-chevron-down {
+  font-size: 20px;
+  margin-left: 8px;
+  margin-top: 8px;
+  margin-right: 4px;
+  float: right;
+  transition: transform 300ms;
+}
+
+/* Mobile dropdown submenu - hidden by default */
+.mobile-nav nav .dropdown-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-top: 0;
+}
+
+/* Mobile dropdown menu items */
+.mobile-nav nav .dropdown-menu a {
+  font-size: 20px;
+  padding: 15px 0 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Remove border from last mobile dropdown item */
+.mobile-nav nav .dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+/* Show mobile dropdown when checkbox is checked */
+.mobile-nav nav .mobile-dropdown-toggle:checked ~ .dropdown-menu {
+  max-height: 300px;
+}
+
+/* Rotate mobile chevron when checkbox is checked */
+.mobile-nav nav .mobile-dropdown-toggle:checked ~ label .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Mobile dropdown item hover state */
+.mobile-nav nav .dropdown-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
