@@ -171,7 +171,7 @@ header nav a.active {
 
 /* Hero section */
 #hero-image {
-  background: url('../img/placeholder_bg.png') no-repeat center center/cover;
+  background: url('../img/cwchero.jpg') no-repeat center center/cover;
   height: 95vh;
   margin: 0;
   display: flex;
@@ -384,4 +384,8 @@ hr {
   color: var(--primary-25);
   font-style: normal;
   font-weight: 500;
+}
+iframe  {
+        aspect-ratio: 16 / 9;
+        width: 100% !important;
 }

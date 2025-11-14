@@ -495,6 +495,7 @@ body:has(#mobile-nav-toggle:checked) {
 .desktop-nav nav .dropdown {
   position: relative;
   display: inline-block;
+  text-align: center;
 }
 
 /* Chevron icon styling */
