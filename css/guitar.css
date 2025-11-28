@@ -1,0 +1,270 @@
+/* Guitar App Styles */
+
+.guitar-app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  min-height: calc(100vh - 200px);
+}
+
+.guitar-app-header {
+  margin-bottom: 30px;
+}
+
+.guitar-app-header h1 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.guitar-app-header p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Chord Buttons */
+.chord-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.chord-btn {
+  background: #f0f0f0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 60px;
+}
+
+.chord-btn:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.chord-btn.active {
+  background: #4CAF50;
+  color: white;
+  border-color: #45a049;
+}
+
+/* Guitar Fretboard */
+.guitar-fretboard {
+  background: #8B4513;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 auto 30px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.fretboard-header {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.string-label {
+  font-weight: bold;
+  color: #fff;
+  font-size: 0.9rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.strings-container {
+  position: relative;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.guitar-string {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to bottom, #C0C0C0, #888);
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.guitar-string:nth-child(1) { top: 0%; height: 3px; }
+.guitar-string:nth-child(2) { top: 20%; height: 3px; }
+.guitar-string:nth-child(3) { top: 40%; height: 2px; }
+.guitar-string:nth-child(4) { top: 60%; height: 2px; }
+.guitar-string:nth-child(5) { top: 80%; height: 1.5px; }
+.guitar-string:nth-child(6) { top: 100%; height: 1.5px; }
+
+.guitar-string:hover {
+  background: linear-gradient(to bottom, #FFD700, #FFA500);
+  transform: scaleY(1.5);
+}
+
+.guitar-string.plucked {
+  animation: stringVibrate 0.5s ease-out;
+}
+
+@keyframes stringVibrate {
+  0%, 100% { transform: scaleY(1); }
+  25% { transform: scaleY(1.8) translateY(-2px); }
+  50% { transform: scaleY(1.5) translateY(2px); }
+  75% { transform: scaleY(1.3) translateY(-1px); }
+}
+
+/* Frets */
+.frets {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.fret {
+  flex: 1;
+  border-right: 3px solid #654321;
+  position: relative;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.fret:last-child {
+  border-right: none;
+}
+
+.fret[data-fret="0"] {
+  border-right: 4px solid #333;
+}
+
+.fret-marker {
+  width: 100%;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.fret-marker:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.fret-marker.active {
+  background: #FFD700;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.fret-marker.active::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #FFA500;
+  border-radius: 50%;
+  border: 3px solid #333;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.fret-marker.muted::after {
+  content: '✕';
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Chord Info */
+.chord-info {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.chord-info p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .guitar-app-container {
+    padding: 15px;
+  }
+
+  .guitar-app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .chord-buttons {
+    gap: 8px;
+  }
+
+  .chord-btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    min-width: 50px;
+  }
+
+  .guitar-fretboard {
+    padding: 15px;
+  }
+
+  .frets {
+    gap: 10px;
+  }
+
+  .fret {
+    min-height: 160px;
+  }
+
+  .fret-marker.active::after {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .guitar-app-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .chord-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    min-width: 45px;
+  }
+
+  .frets {
+    gap: 8px;
+  }
+
+  .fret {
+    min-height: 140px;
+  }
+
+  .string-label {
+    font-size: 0.8rem;
+  }
+}
