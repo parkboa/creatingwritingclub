@@ -6,6 +6,25 @@ Experiment with colors, typography, spacing, and component styles.
 
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+/* ===============================================================
+  🤖 **COPILOT INSTRUCTIONS FOR custom.css** 🤖
+  ================================================================
+  
+  - **🚫 CRITICAL RULE: DO NOT EDIT `framework.css`.** - **✅ ALL new CSS styles, overrides, and design customizations go HERE in this file.**
+  
+  ---
+  
+  **KEY ASSETS:**
+  
+  1.  **Colors:** Use CSS Variables like `var(--primary-100)`, `var(--white)`, and `var(--grey)`.
+  2.  **Spacing:** Use CSS Variables like `var(--spacing8x3)` or `var(--spacing8x8)` for consistent measurements.
+  3.  **Layout:** Build upon the existing `grid` system classes (e.g., `.mobi1`, `.tab3`, `.desk4`).
+  
+  Always ask user for preferences instead of making assumptions!
+  
+*/
+
+
 /* ==========================================================================
    DESIGN SYSTEM - CUSTOMIZE YOUR COLORS & BRAND
    ========================================================================== */
