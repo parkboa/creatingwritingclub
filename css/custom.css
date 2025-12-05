@@ -4,6 +4,8 @@ STUDENT CUSTOMIZATION FILE
 This is where you make your design changes!
 Experiment with colors, typography, spacing, and component styles.
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&display=swap');
+
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 /* ===============================================================
@@ -36,6 +38,8 @@ Experiment with colors, typography, spacing, and component styles.
   --primary-25: #CED7E4;
   --grey: #EBEFF4;
   --white: #fff;
+  --about-bg: #414046;
+  --about-accent: #FDFF8A;
   
   /* You can add more custom colors here */
 
@@ -50,7 +54,13 @@ Experiment with colors, typography, spacing, and component styles.
 
 body {
   color: var(--primary-80);
-  /* font-family is set in framework.css but you can override it here if needed */
+  font-family: "DM Mono", monospace;
+  margin: 0;
+}
+
+main {
+  margin: 0;
+  padding: 0;
 }
 
 /* Heading Styles - Customize sizes, colors, spacing */
@@ -167,61 +177,145 @@ a.button-highlight {
 
 
 /* Header styles */
-header img {
+.site-header {
+  height: 71px;
+  max-width: var(--Spacing-Desktop-Max-Width, 1440px);
+  flex-shrink: 0;
+  align-self: stretch;
+  margin: 0 auto;
+  align-items: center;
+  padding: 0 var(--spacing8x3);
+}
+
+.site-header img {
   width: 160px;
   /* Try adjusting: width, border-radius for logo styling */
 }
 
-header nav {
-  text-align: right;
+.site-header nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing8x3);
   font-size: 15px;
 }
 
-header nav a {
-  margin-left: 40px;
+.site-header nav a {
+  margin-left: 0;
   /* Try adding: text-transform, font-weight, padding for button-style nav */
 }
 
-header nav a.active {
+.site-header nav a.active {
   border-bottom: 2px solid var(--primary-80);
   padding-bottom: 2px;
+}
+
+.main-nav,
+.main-nav * {
+  font-family: "DM Mono", monospace;
 }
 
 
 /* Hero section */
 #hero-image {
-  background: url('../img/cwchero.jpg') no-repeat center center/cover;
-  height: 95vh;
-  margin: 0;
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+#hero-image .hero-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#hero-image .hero-text {
+  position: absolute;
+  text-align: center;
+  color: var(--primary-100);
+  font-size: 55px;
+  font-family: "DM Mono", monospace;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.15px;
   padding: var(--spacing8x3);
 }
 
-#hero-image h1 {
-  text-align: center;
-  color: var(--white);
-  margin: 0; 
-
+.about-banner {
+  background: var(--about-bg);
+  color: var(--about-accent);
+  padding: 64px 200px;
+  margin: 0;
 }
 
-#hero-image p {
-  color: var(--white);
-  margin: 0; 
-}
-
-#hero-image span i {
-  background: var(--white);
-  font-size: 1.625rem;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+.about-banner-inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: var(--spacing8x12);
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.about-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 126px;
+  font-family: "DM Mono", monospace;
+  font-size: 39px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: 0.15px;
+  text-align: center;
+}
+
+.about-copy {
+  font-family: "DM Mono", monospace;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: 0.15px;
+  color: #fdff8a;
+  max-width: 835px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.about-copy p {
+  margin: 0;
+  color: #fdff8a;
+  line-height: 48px;
+}
+
+.about-copy p:last-child {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 799px) {
+  .about-banner {
+    padding: 48px 0;
+  }
+
+  .about-banner-inner {
+    padding: 0 var(--spacing8x3);
+    gap: 24px;
+    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-heading,
+  .about-copy {
+    text-align: center;
+  }
 }
 
 
