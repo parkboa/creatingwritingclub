@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Acoustic Guitar App</title>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/d0544f08d4.js" crossorigin="anonymous"></script>
+
+    <!-- Framework CSS -->
+    <link rel="stylesheet" href="css/framework.css" />
+    
+    <!-- Dropdown Navigation CSS -->
+    <link rel="stylesheet" href="css/dropdown-nav.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
+    
+    <!-- Guitar App CSS -->
+    <link rel="stylesheet" href="css/guitar.css" />
+  </head>
+
+  <body>
+
+    <!-- Hidden checkbox for CSS-only toggle functionality -->
+    <input type="checkbox" id="mobile-nav-toggle" />
+    
+    <!-- Hamburger Menu -->
+    <label for="mobile-nav-toggle" class="hamburger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="Activities">
+          <input type="checkbox" id="mobile-dropdown-toggle" class="mobile-dropdown-toggle" />
+          <label for="mobile-dropdown-toggle">Activities <i class="fa-solid fa-chevron-down"></i></label>
+          <div class="dropdown-menu">
+            <a href="activities.html">Activities</a>
+            <a href="guitar.html">Guitar App</a>
+          </div>
+        </div>
+        <a href="Resources.html">Resources</a>
+      </nav>
+    </div>
+    
+    <!-- Main content wrapper -->
+    <div id="content-wrapper">
+
+      <!-- Header Section -->
+      <header class="grid desktop-nav">
+        <a href="index.html" class="mobi2 tab2 desk2">
+          <img src="img/logoLightBG.png" alt="Club Name" />
+        </a>
+        <nav class="mobi0 tab2 desk2">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <div class="dropdown">
+            <a href="activities.html">Activities <i class="fa-solid fa-chevron-down"></i></a>
+            <div class="dropdown-menu">
+              <a href="activities.html">Activities</a>
+              <a href="guitar.html">Guitar App</a>
+            </div>
+          </div>
+          <a href="Resources.html">Resources</a>
+        </nav>
+      </header>
+
+      <!-- Guitar App Section -->
+      <section class="guitar-app-container">
+        <div class="guitar-app-header">
+          <h1>Acoustic Guitar</h1>
+          <p>Select a chord to see finger positions, or tap the strings to play</p>
+        </div>
+
+        <!-- Chord Selection Buttons -->
+        <div class="chord-buttons">
+          <button class="chord-btn" data-chord="C">C</button>
+          <button class="chord-btn" data-chord="D">D</button>
+          <button class="chord-btn" data-chord="E">E</button>
+          <button class="chord-btn" data-chord="F">F</button>
+          <button class="chord-btn" data-chord="G">G</button>
+          <button class="chord-btn" data-chord="A">A</button>
+          <button class="chord-btn" data-chord="B">B</button>
+          <button class="chord-btn" data-chord="Am">Am</button>
+          <button class="chord-btn" data-chord="Em">Em</button>
+          <button class="chord-btn" data-chord="Dm">Dm</button>
+        </div>
+
+        <!-- Guitar Fretboard -->
+        <div class="guitar-fretboard">
+          <div class="fretboard-header">
+            <span class="string-label">E</span>
+            <span class="string-label">A</span>
+            <span class="string-label">D</span>
+            <span class="string-label">G</span>
+            <span class="string-label">B</span>
+            <span class="string-label">e</span>
+          </div>
+          
+          <!-- Strings container -->
+          <div class="strings-container">
+            <div class="guitar-string" data-string="0" data-note="E"></div>
+            <div class="guitar-string" data-string="1" data-note="A"></div>
+            <div class="guitar-string" data-string="2" data-note="D"></div>
+            <div class="guitar-string" data-string="3" data-note="G"></div>
+            <div class="guitar-string" data-string="4" data-note="B"></div>
+            <div class="guitar-string" data-string="5" data-note="e"></div>
+          </div>
+
+          <!-- Frets -->
+          <div class="frets">
+            <div class="fret" data-fret="0">
+              <div class="fret-marker" data-string="0" data-fret="0"></div>
+              <div class="fret-marker" data-string="1" data-fret="0"></div>
+              <div class="fret-marker" data-string="2" data-fret="0"></div>
+              <div class="fret-marker" data-string="3" data-fret="0"></div>
+              <div class="fret-marker" data-string="4" data-fret="0"></div>
+              <div class="fret-marker" data-string="5" data-fret="0"></div>
+            </div>
+            <div class="fret" data-fret="1">
+              <div class="fret-marker" data-string="0" data-fret="1"></div>
+              <div class="fret-marker" data-string="1" data-fret="1"></div>
+              <div class="fret-marker" data-string="2" data-fret="1"></div>
+              <div class="fret-marker" data-string="3" data-fret="1"></div>
+              <div class="fret-marker" data-string="4" data-fret="1"></div>
+              <div class="fret-marker" data-string="5" data-fret="1"></div>
+            </div>
+            <div class="fret" data-fret="2">
+              <div class="fret-marker" data-string="0" data-fret="2"></div>
+              <div class="fret-marker" data-string="1" data-fret="2"></div>
+              <div class="fret-marker" data-string="2" data-fret="2"></div>
+              <div class="fret-marker" data-string="3" data-fret="2"></div>
+              <div class="fret-marker" data-string="4" data-fret="2"></div>
+              <div class="fret-marker" data-string="5" data-fret="2"></div>
+            </div>
+            <div class="fret" data-fret="3">
+              <div class="fret-marker" data-string="0" data-fret="3"></div>
+              <div class="fret-marker" data-string="1" data-fret="3"></div>
+              <div class="fret-marker" data-string="2" data-fret="3"></div>
+              <div class="fret-marker" data-string="3" data-fret="3"></div>
+              <div class="fret-marker" data-string="4" data-fret="3"></div>
+              <div class="fret-marker" data-string="5" data-fret="3"></div>
+            </div>
+            <div class="fret" data-fret="4">
+              <div class="fret-marker" data-string="0" data-fret="4"></div>
+              <div class="fret-marker" data-string="1" data-fret="4"></div>
+              <div class="fret-marker" data-string="2" data-fret="4"></div>
+              <div class="fret-marker" data-string="3" data-fret="4"></div>
+              <div class="fret-marker" data-string="4" data-fret="4"></div>
+              <div class="fret-marker" data-string="5" data-fret="4"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chord-info">
+          <p id="selected-chord-name">Select a chord to begin</p>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="grid">
+        <img src="img/logoDarkBG.png" alt="Club Name" class="mobi1 tab2 desk2" />
+        <nav class="mobi1 tab2 desk2">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="activities.html">Activities</a>
+          <a href="Resources.html">Resources</a>
+        </nav>
+        <hr class="mobi1 tab1 desk1">
+        <a href="mailto:hello@clubname.com" class="mobi2 tab2 desk2">hello@clubname.com</a>
+        <p class="mobi2 tab2 desk2">&copy; 2025</p>
+      </footer>
+
+    </div>
+
+    <!-- Guitar App JavaScript -->
+    <script src="js/guitar.js"></script>
+
+  </body>
+</html>
